@@ -1,0 +1,12 @@
+<title>{%block title%}Clients{%endblock%}</title>
+
+{%block content%}
+<p>Наши клиенты</p>
+{% for client in clients|dictsort:'lang' %}
+    {% for key,value in client.items %}
+        <p>{{ key }} {{ value }}</p>
+    {%endfor%}
+        <a href="{% url 'client' client.id %}">Данные нашей компании {{title}}</a>
+{%endfor%}
+{% now "N, j, Y, P"%}
+{%endblock%}

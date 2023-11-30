@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Загаловок</title>
+</head>
+<body>
+{% include 'header.html'%}
+    <h1>{{ header }}</h1>
+    {%comment%}
+    <p>Адрес: улица{{ address.0 }}, дом{{address.1}},кв {{address.2}}</p>
+    {%endcomment%}
+    <p>Пользователь: {{user.name}},возраст: {{user.age}}</p>
+    <p>Знает языки программирования:{{langs}}</p>
+
+    {% autoescape off %}
+        {{text}}
+    {% endautoescape %}
+</body>
+</html>
